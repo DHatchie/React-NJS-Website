@@ -70,37 +70,43 @@ export const Projects = () => {
           {portfolioProjects.map((project) => (
             <div
               key={project.title}
-              className="relative z-0 overflow-hidden rounded-3xl bg-gray-800 p-8 px-8 pt-8 after:absolute after:inset-0 after:z-10 after:rounded-3xl after:outline after:outline-2 after:-outline-offset-2 after:outline-white/20 after:content-[''] after:pointer-events-none md:pt-12 md:px-10"
+              className="relative z-0 overflow-hidden rounded-3xl bg-gray-800 p-8 px-8 pt-8 after:absolute after:inset-0 after:z-10 after:rounded-3xl after:outline after:outline-2 after:-outline-offset-2 after:outline-white/20 after:content-[''] after:pointer-events-none md:pt-12 md:px-10 lg:pt-16 lg:px-20"
             >
               <div className='absolute inset-0 -z-10 opacity-5' style={{
                 backgroundImage: `url(${grainImage.src})`
               }}></div>
-              <div className='inline-flex gap-2 bg-gradient-to-r from-emerald-300 to-sky-400 bg-clip-text text-sm font-bold uppercase tracking-widest text-transparent'>
-                <span>{project.company}</span>
-                <span>&bull;</span>
-                <span>{project.year}</span>
+              <div className='lg:grid lg:grid-cols-2 lg:gap-16'>
+                <div className='lg:pb-12'>
+                  <div className='inline-flex gap-2 bg-gradient-to-r from-emerald-300 to-sky-400 bg-clip-text text-sm font-bold uppercase tracking-widest text-transparent'>
+                    <span>{project.company}</span>
+                    <span>&bull;</span>
+                    <span>{project.year}</span>
+                  </div>
+                  <h3 className='mt-2 font-serif text-2xl md:text-4xl md:mt-5'>{project.title}</h3>
+                  <hr className='mt-4 border-t-2 border-white/5 md:mt-5'></hr>
+                  <ul className='mt-4 flex flex-col gap-4 md:mt-5'>
+                    {project.results.map((result) => (
+                      <li className='flex gap-2 text-sm text-white/50 md:text-base' key={null}>
+                        <CheckCircleIcon className='size-5 md:size-6' />
+                        <span>{result.title}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <a href={project.link}>
+                    <button className='mt-8 inline-flex h-12 w-full items-center justify-center rounded-xl bg-white font-semibold text-gray-950 md:w-auto px-6'>
+                      <span>View Live Site</span>
+                      <ArrowUpright className='size-4' />
+                    </button>
+                  </a>
+                </div>
+                <div className='relative'>
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    className='-mb-4 mt-8 md:-mb-0 lg:mt-8 lg:absolute lg:h-full lg:w-auto lg:max-w-none'
+                  />
+                </div>
               </div>
-              <h3 className='mt-2 font-serif text-2xl md:text-4xl md:mt-5'>{project.title}</h3>
-              <hr className='mt-4 border-t-2 border-white/5 md:mt-5'></hr>
-              <ul className='mt-4 flex flex-col gap-4 md:mt-5'>
-                {project.results.map((result) => (
-                  <li className='flex gap-2 text-sm text-white/50 md:text-base' key={null}>
-                    <CheckCircleIcon className='size-5 md:size-6' />
-                    <span>{result.title}</span>
-                  </li>
-                ))}
-              </ul>
-              <a href={project.link}>
-                <button className='mt-8 inline-flex h-12 w-full items-center justify-center rounded-xl bg-white font-semibold text-gray-950 md:w-auto px-6'>
-                  <span>View Live Site</span>
-                  <ArrowUpright className='size-4' />
-                </button>
-              </a>
-              <Image
-                src={project.image}
-                alt={project.title}
-                className='-mb-4 mt-8 md:-mb0'
-              />
             </div>
           ))}
         </div>
