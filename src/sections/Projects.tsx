@@ -56,13 +56,11 @@ export const Projects = () => {
   return (
     <section className='pb-16 lg:py-24'>
       <div className='container'>
-        <div className='flex flex-col items-center justify-center'>
-          <SectionHeader
-            eyebrow='Real-World-Results'
-            title='Featured Projects'
-            description='See how I transformed concepts into engaging digital experiences.'
-          />
-        </div>
+        <SectionHeader
+          eyebrow='Real-World-Results'
+          title='Featured Projects'
+          description='See how I transformed concepts into engaging digital experiences.'
+        />
         <div className='mt-10 flex flex-col gap-20 md:mt-20'>
           {portfolioProjects.map((project) => (
             <div
