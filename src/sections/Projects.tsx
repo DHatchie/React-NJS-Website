@@ -65,7 +65,7 @@ export const Projects = () => {
           {portfolioProjects.map((project) => (
             <div
               key={project.title}
-              className="relative z-0 overflow-hidden rounded-3xl bg-gray-800 p-8 px-8 pt-8 after:pointer-events-none after:absolute after:inset-0 after:z-10 after:rounded-3xl after:outline after:outline-2 after:-outline-offset-2 after:outline-white/20 after:content-[''] md:px-10 md:pt-12 lg:px-20 lg:pt-16"
+              className="relative z-0 overflow-hidden rounded-3xl bg-gray-800 px-8 pt-8 after:pointer-events-none after:absolute after:inset-0 after:z-10 after:rounded-3xl after:outline after:outline-2 after:-outline-offset-2 after:outline-white/20 after:content-[''] md:px-10 md:pt-12 lg:px-20 lg:pt-16"
             >
               <div
                 className='absolute inset-0 -z-10 opacity-5'
@@ -74,7 +74,7 @@ export const Projects = () => {
                 }}
               ></div>
               <div className='lg:grid lg:grid-cols-2 lg:gap-16'>
-                <div className='lg:pb-12'>
+                <div className='lg:pb-16'>
                   <div className='inline-flex gap-2 bg-gradient-to-r from-emerald-300 to-sky-400 bg-clip-text text-sm font-bold uppercase tracking-widest text-transparent'>
                     <span>{project.company}</span>
                     <span>&bull;</span>
@@ -106,7 +106,7 @@ export const Projects = () => {
                   <Image
                     src={project.image}
                     alt={project.title}
-                    className='-mb-4 mt-8 md:-mb-0 lg:absolute lg:mt-8 lg:h-full lg:w-auto lg:max-w-none'
+                    className='-mb-4 mt-8 md:-mb-0 lg:absolute lg:mt-0 lg:h-full lg:w-auto lg:max-w-none'
                   />
                 </div>
               </div>

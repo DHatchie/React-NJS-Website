@@ -4,6 +4,7 @@ import memojiAvatar3 from "@/assets/images/memoji-avatar-3.png"
 import memojiAvatar4 from "@/assets/images/memoji-avatar-4.png"
 import memojiAvatar5 from "@/assets/images/memoji-avatar-5.png"
 import { SectionHeader } from "@/components/SectionHeader"
+import grainImage from "@/assets/images/grain.jpg"
 import Image from "next/image"
 
 const testimonials = [
@@ -41,22 +42,33 @@ const testimonials = [
 
 export const Testimonials = () => {
   return (
-    <div>
-      <SectionHeader
-        eyebrow='Happy Clients'
-        title='What Clients Say about Me'
-        description="Don't just take my word for it. See what my clients have to say about my
-        work."
-      />
-      <div>
-        {testimonials.map((testimonials) => (
-          <div key={testimonials.name}>
-            <Image src={testimonials.avatar} alt={testimonials.name} />
-            <div>{testimonials.name}</div>
-            <div>{testimonials.position}</div>
-            <p>{testimonials.text}</p>
-          </div>
-        ))}
+    <div className='py-16'>
+      <div className='container'>
+        <SectionHeader
+          eyebrow='Happy Clients'
+          title='What Clients Say about Me'
+          description="Don't just take my word for it. See what my clients have to say about my
+          work."
+        />
+        <div>
+          {testimonials.map((testimonials) => (
+            <div
+              key={testimonials.name}
+              className='relative z-0 overflow-hidden rounded-3xl bg-gray-800 p-6'
+            >
+              <div
+                className='absolute inset-0 -z-10 opacity-5'
+                style={{
+                  backgroundImage: `url(${grainImage.src})`
+                }}
+              ></div>
+              <Image src={testimonials.avatar} alt={testimonials.name} />
+              <div>{testimonials.name}</div>
+              <div>{testimonials.position}</div>
+              <p>{testimonials.text}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   )
