@@ -1,3 +1,3 @@
 export const TapeSection = () => {
-  return <div>Tape Section</div>;
-};
+  return <div>Tape Section</div>
+}
