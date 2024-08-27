@@ -1,6 +1,5 @@
 import { Card } from "@/components/Card"
 import { SectionHeader } from "@/components/SectionHeader"
-import StarIcon from "@/assets/icons/star.svg"
 import bookImage from "@/assets/images/book-cover.png"
 import Image from "next/image"
 import AnsibleIcon from "@/assets/icons/ansible.svg"
@@ -12,6 +11,7 @@ import JenkinsIcon from "@/assets/icons/jenkins.svg"
 import mapImage from "@/assets/images/map.png"
 import smileMemoji from "@/assets/images/memoji-smile.png"
 import { ToolboxIcon } from "@/components/ToolboxIcons"
+import { CardHeader } from "@/components/CardHeader"
 
 const toolboxItems = [
   {
@@ -82,25 +82,16 @@ export const About = () => {
         />
         <div className='mt-20'>
           <Card className='h-[320px]'>
-            <div className='flex flex-col'>
-              <div className='inline-flex items-center gap-2'>
-                <StarIcon className='size-9 text-emerald-300' />
-                <h3 className='font-serif text-3xl'>My Resume</h3>
-              </div>
-              <p className='mt-2 text-sm text-white/60'>
-                Explore a copy of my resume.
-              </p>
-            </div>
+            <CardHeader title='My Resume' description='Explore my resume' />
             <div className='mx-auto mt-8 w-40'>
               <Image src={bookImage} alt='Book cover' />
             </div>
           </Card>
           <Card>
-            <div>
-              <StarIcon />
-              <h3>My Toolbox</h3>
-              <p>The technologies I use to craft modern solutions.</p>
-            </div>
+            <CardHeader
+              title='My Toolbox'
+              description='The technologies I use to craft modern solutions.'
+            />
             <div>
               {toolboxItems.map((item) => (
                 <div key={item.title}>
@@ -111,11 +102,10 @@ export const About = () => {
             </div>
           </Card>
           <Card>
-            <div>
-              <StarIcon />
-              <h3>Beyond the Code</h3>
-              <p>Explore my hobbies outside of the digital realm.</p>
-            </div>
+            <CardHeader
+              title='Beyond the Code'
+              description='Explore my hobbies outside of the digital realm.'
+            />
             <div>
               {hobbies.map((hobby) => (
                 <div key={hobby.title}>
