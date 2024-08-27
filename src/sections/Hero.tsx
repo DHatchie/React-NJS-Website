@@ -56,7 +56,7 @@ export const Hero = () => {
         </div>
         <div className="max-w-lg mx-auto">
           <h1 className="font-serif text-3xl md:text-5xl text-center mt-8 tracking-wide">
-            Building Exceptional User Experiences
+            Turning Coffee Into Code Since 2019
           </h1>
         </div>
         <div className="lg:max-w-prose lg:mx-auto mt-4">
