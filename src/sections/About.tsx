@@ -12,6 +12,8 @@ import mapImage from "@/assets/images/map.png"
 import smileMemoji from "@/assets/images/memoji-smile.png"
 import { ToolboxIcon } from "@/components/ToolboxIcons"
 import { CardHeader } from "@/components/CardHeader"
+import { ToolboxItems } from "@/components/ToolboxItems"
+import { title } from "process"
 
 const toolboxItems = [
   {
@@ -80,26 +82,25 @@ export const About = () => {
           title='A Glimpse Into My World'
           description='Learn more about who I am, what I do, and what inspires me.'
         />
-        <div className='mt-20'>
+        <div className='mt-20 flex flex-col gap-8'>
           <Card className='h-[320px]'>
             <CardHeader title='My Resume' description='Explore my resume' />
             <div className='mx-auto mt-8 w-40'>
               <Image src={bookImage} alt='Book cover' />
             </div>
           </Card>
-          <Card>
+          <Card className='h-[320px] p-0'>
             <CardHeader
               title='My Toolbox'
               description='The technologies I use to craft modern solutions.'
+              className='px-6 pt-6'
             />
-            <div>
-              {toolboxItems.map((item) => (
-                <div key={item.title}>
-                  <ToolboxIcon component={item.iconType} />
-                  <span>{item.title}</span>
-                </div>
-              ))}
-            </div>
+            <ToolboxItems items={toolboxItems} className='mt-6' />
+            <ToolboxItems
+              items={toolboxItems}
+              className='mt-6'
+              itemsWrapperClassName='-translate-x-1/2'
+            />
           </Card>
           <Card>
             <CardHeader
