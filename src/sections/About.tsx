@@ -10,7 +10,6 @@ import GitlabIcon from "@/assets/icons/gitlab.svg"
 import JenkinsIcon from "@/assets/icons/jenkins.svg"
 import mapImage from "@/assets/images/map.png"
 import smileMemoji from "@/assets/images/memoji-smile.png"
-import { ToolboxIcon } from "@/components/ToolboxIcons"
 import { CardHeader } from "@/components/CardHeader"
 import { ToolboxItems } from "@/components/ToolboxItems"
 import { title } from "process"
@@ -45,31 +44,45 @@ const toolboxItems = [
 const hobbies = [
   {
     title: "Fishing",
-    emoji: "🎣"
+    emoji: "🎣",
+    left: "5%",
+    top: "5%"
   },
   {
     title: "Golf",
-    emoji: "⛳"
+    emoji: "⛳",
+    left: "50%",
+    top: "5%"
   },
   {
     title: "Music",
-    emoji: "🎧"
-  },
-  {
-    title: "Fitness",
-    emoji: "🏋️‍♂️"
+    emoji: "🎧",
+    left: "10%",
+    top: "35%"
   },
   {
     title: "Hiking",
-    emoji: "🥾"
+    emoji: "🥾",
+    left: "70%",
+    top: "45%"
   },
   {
-    title: "Camping",
-    emoji: "🏕️"
+    title: "Fitness",
+    emoji: "🏋️‍♂️",
+    left: "35%",
+    top: "40%"
   },
   {
     title: "Hunting",
-    emoji: "🏹"
+    emoji: "🏹",
+    left: "45%",
+    top: "70%"
+  },
+  {
+    title: "Camping",
+    emoji: "🏕️",
+    left: "5%",
+    top: "65%"
   }
 ]
 
@@ -102,15 +115,23 @@ export const About = () => {
               itemsWrapperClassName='-translate-x-1/2'
             />
           </Card>
-          <Card>
+          <Card className='flex h-[320px] flex-col p-0'>
             <CardHeader
               title='Beyond the Code'
               description='Explore my hobbies outside of the digital realm.'
+              className='px-6 py-6'
             />
-            <div>
+            <div className='relative flex-1'>
               {hobbies.map((hobby) => (
-                <div key={hobby.title}>
-                  <span>{hobby.title}</span>
+                <div
+                  key={hobby.title}
+                  className='absolute inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 px-6 py-1.5'
+                  style={{
+                    left: hobby.left,
+                    top: hobby.top
+                  }}
+                >
+                  <span className='font-md text-gray-950'>{hobby.title}</span>
                   <span>{hobby.emoji}</span>
                 </div>
               ))}
