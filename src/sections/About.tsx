@@ -137,9 +137,19 @@ export const About = () => {
               ))}
             </div>
           </Card>
-          <Card>
-            <Image src={mapImage} alt='map' />
-            <Image src={smileMemoji} alt='smiling memoji' />
+          <Card className='relative h-[320px] p-0'>
+            <Image
+              src={mapImage}
+              alt='map'
+              className='h-full w-full translate-y-1 object-cover'
+            />
+            <div className="absolute left-1/2 top-1/2 size-20 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 after:absolute after:inset-0 after:rounded-full after:outline after:outline-2 after:-outline-offset-2 after:outline-gray-950/30 after:content-['']">
+              <Image
+                src={smileMemoji}
+                alt='smiling memoji'
+                className='size-20'
+              />
+            </div>
           </Card>
         </div>
       </div>
